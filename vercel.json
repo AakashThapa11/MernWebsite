@@ -2,6 +2,5 @@
   "version": 2,
   "name": "mernwebsite",
   "builds": [{ "src": "backend/server.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "backend/server.js" }],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "routes": [{ "src": "/(.*)", "dest": "backend/server.js" }]
 }
