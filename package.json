@@ -7,9 +7,10 @@
   "description": "",
   "main": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js --ignore client"
+    "dev": "nodemon --exec babel-node backend/server.js",
+    "build": "babel backend -d dist",
+    "both-dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\""
   },
   "author": "",
   "license": "ISC",
@@ -29,5 +30,13 @@
     "path": "^0.12.7",
     "stripe": "^9.9.0",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.2",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "concurrently": "^8.2.2"
   }
 }
